@@ -1,0 +1,22 @@
+    html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+}
+
+.header-wrp {
+    background: url(../img/header.png) no-repeat;
+    width: 100%;
+    height: 19em;
+}
+
+.header {
+    margin: 0%;
+
+}
+
+.nav-wrp {
+    width: 100%;
+}
+.nav {
+    text-align: center;
+}
