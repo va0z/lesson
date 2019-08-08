@@ -50,11 +50,28 @@ html {
 
 }
 
-
-
 .nav a:active {
     background-color: rgb(245, 227, 128);
     box-shadow: -.1em 0 .3em -.1em rgba(247, 255, 225, 0.932),
                 .1em 0 .3em -.1em rgba(247, 255, 225, 0.932),
-                inset 0 0 .375em #f59a2bd3;}
+                inset 0 0 .375em #f59a2bd3;
+}
 
+/* aticle */
+
+.aticle-wrp {
+    width: 100%;
+    display: inline-table;
+}
+
+.aticle {
+    width: 800px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: block;
+}
+
+.aticle img {
+    width: 10%;
+    height: 10%;
+} 
