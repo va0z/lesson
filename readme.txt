@@ -7,5 +7,3 @@ top.php
     $data['pageTitle']
 main.php
 footer.php
-
-SD244km567
