@@ -3,6 +3,9 @@ html {
     font-size: 20px;
 }
 
+body{
+    margin: 0;
+}
 .header-wrp {
     background: url(../img/header.png) no-repeat;
     width: 100%;
@@ -84,16 +87,59 @@ html {
 /* any */
 
 .reviews-wrp {
-
+    background-color: #f3f3f3;
+    width: 100%;
+    margin: 1rem 0;
+    display: table;
 }
 
 .reviews {
-
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto  ;
+    max-width: 845px;
+    display: block;
 }
 
 .partners-wrp {
-
+    background-color: white;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
 }
 .partners {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto  ;
+    max-width: 845px;
+    
 
+}
+.partners .img-wrp {
+    width: 100%;
+    max-width: 170px;
+    margin: 0 auto;
+    display: inline-block;
+} 
+
+.partners img {
+    width: 100%;
+    max-width: 135px;
+
+} 
+
+/* footer */
+
+.footer-wrp {
+    background-color: #f3f3f3;
+    width: 100%;
+    font-size: 0.7rem;
+    height: 3rem;
+    display: table;
+}
+
+.footer-cont{
+    width: 90%;
+    max-width: 845px;
+    margin: 1rem auto;
+    text-align: center;
 }
