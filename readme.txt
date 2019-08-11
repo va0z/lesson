@@ -15,6 +15,7 @@ git remote add pb git://github.com/paulboone/ticgit.git
 git fetch pb # извлеч
 git pull pb # извлекает и сливает (merge)
 
+git push
 git push [удал. сервер] [ветка] # выгрузка на сервер
 git push origin master
 
