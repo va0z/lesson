@@ -20,3 +20,5 @@ git push [удал. сервер] [ветка] # выгрузка на серв�
 git push origin master
 
 git remote show origin # инспекция удаленного репозитория
+
+//            document.querySelector(link).style.display = document.querySelector(link).style.display=='none'? 'block' : 'none';

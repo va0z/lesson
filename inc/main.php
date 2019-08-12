@@ -2,7 +2,7 @@
         <div class="aticle-wrp">
             <div class="aticle">
                 <P>ПО ЭТП</P>
-                <img src="img/poetp_screen_color.png" alt="">
+                <img class="hp" src="img/poetp_screen_color.png" alt="">
                 <p>Программа настройки электронной подписи и компьютера, позволяет автоматизированно настроить компьютер для госуслуг и торговых площадок.</p>
                 <p>С помошью ...</p>
                 <p>ПО ЭТП экономит</p>
@@ -10,7 +10,7 @@
             </div>
             <div class="aticle">
                 <P>Auto ES</P>
-                <img src="img/aesendler_screen_color.png" alt="">
+                <img class="hp" src="img/aesendler_screen_color.png" alt="">
                 <p>Программа Auto Email Sendler позволяет настроить автоматическое отправление писем любому количеству клиентов.</p>
                 <p>Программа предназначенна ...</p>
                 <p>С помошью ...</p>

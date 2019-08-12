@@ -132,10 +132,96 @@ body{
     display: table-cell;
 }
 
-.aticle img {
+.hp {
     width: 100%;
 } 
+.po {
+    width: 250px;
+    display: block;
+    float: left;
+}
 
+.col {
+    display: table;
+}
+.col-head {
+    display: table-caption;
+    background-color: #e08410; 
+    color: white;
+    text-align: center;
+    padding: .5rem;
+}
+.col-main {
+    font-weight: bold;
+}
+
+.price {
+    display: table;
+    margin: 0 auto;
+}
+.p-free,.p-base,.p-prem {
+    display: table-cell;
+    width: 30%;
+    padding: 1%;
+    transition: 2s linear;
+}
+.p-name{
+    text-align: center;
+    margin: 2% auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.p-cost-logo,.p-cost-val{
+    font-size: 1.5rem;
+    display: inline-block;
+}
+.p-cost{
+    text-align: center;
+    margin: 2% auto;
+}
+.p-des{
+    text-align: left;
+    margin: 2% auto;
+}
+
+.p-free .p-name,.p-free .p-cost,.p-free .p-des{
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+.p-base .p-name,.p-base .p-cost,.p-base .p-des{
+    background-color: #e08410;
+    padding: 10px;
+}
+.p-prem .p-name,.p-prem .p-cost,.p-prem .p-des{
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+.p-des-act{
+    color: #000000;
+}
+.p-des-pass{
+    color: #919090;
+}
+.p-disp-free,.p-disp-base,.p-disp-prem{
+    transition: 2s linear;
+}
+.p-disp-on{
+    display: block;
+    transition: .5s linear;
+}
+.p-disp-off{
+    display: none;
+    transition: .5s linear;
+}
+
+.counter {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    background-color: #f3f3f3;
+    color: #646464;
+}
 /* any */
 
 .reviews-wrp {
