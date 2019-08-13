@@ -1,4 +1,5 @@
 <?php
+require ("req/prog.php");
 
 $data = array();
 $act=isset($_POST['act']) ? $_POST['act'] : "" ;
@@ -6,6 +7,9 @@ $act=isset($_POST['act']) ? $_POST['act'] : "" ;
 switch ($act) {
     case 'poetp':
         poetp();
+        break;
+    case 'poetp_free';
+        poetp_free();
         break;
     case 'aes':
         aes();
@@ -32,6 +36,11 @@ function poetp() {
     require ("inc/header.php");
     require ("inc/poetp.php");
     require ("inc/footer.php");
+}
+function poetp_free(){
+    tools::count("poetp.inc");
+    tools::file_force_download('arh/poetp.rar');
+    poetp();
 }
 function aes() {
     $data['TitleName'] = "ПО ЭТП :: Auto ES";

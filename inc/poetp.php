@@ -24,7 +24,10 @@
                             <div class="p-des-pass">- Защита от вирусов</div>
                             <div class="p-des-pass">- Тех. поддержка (e-mail)</div>
                             <div class="aticle-wrp">
-                                <div class="p-des-button p-des-button1"><a href="http://" target="_blank" rel="noopener noreferrer">Скачать</a></div>
+                                <form action="/" method="post">
+                                    <input type="hidden" name="act" value="poetp_free">
+                                    <input class="p-des-button p-des-button1" type="submit" name="button" value="Скачать">
+                                </form>
                             </div>
                             
                         </div>
@@ -43,7 +46,10 @@
                             <div class="p-des-act">+ Защита от вирусов</div>
                             <div class="p-des-pass">- Тех. поддержка (e-mail)</div>
                             <div class="aticle-wrp"> 
-                                <div class="p-des-button p-des-button2"><a href="http://" target="_blank" rel="noopener noreferrer">Купить</a></div>
+                                <form action="/" method="post">
+                                    <input type="hidden" name="act" value="poetp_free">
+                                    <input class="p-des-button p-des-button2" type="submit" name="button" value="Купить">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -61,7 +67,10 @@
                             <div class="p-des-act">+ Защита от вирусов</div>
                             <div class="p-des-act">+ Тех. поддержка (e-mail)</div>
                             <div class="aticle-wrp">
-                                <div class="p-des-button p-des-button1"><a href="http://" target="_blank" rel="noopener noreferrer">Купить</a></div>
+                                <form action="/" method="post">
+                                    <input type="hidden" name="act" value="poetp_prem">
+                                    <input class="p-des-button p-des-button1" type="submit" name="button" value="Купить">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -71,7 +80,7 @@
 
     </div>
     <div class="counter">
-        Скаченно экземпляров программы: <b>2222</b>
+        Скаченно экземпляров программы: <b><?php tools::count_r("poetp.inc");?></b>
     </div>
     <div class="aticle-wrp">
         <div class="soft-header">
