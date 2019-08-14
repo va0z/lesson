@@ -4,7 +4,11 @@
  */
 class tools{
 
-    public $fc=null; # poetp-count.inc aes-count.inc файл счетчика 
+    public $fc=null;        # poetp-count.inc aes-count.inc файл счетчика 
+    public $file=null;      # ссылка на скачку файла
+    public $e_name=null;    # имя отправителя
+    public $e_address=null; # адрес почты отправителя
+    public $e_text=null;    # текст письма
 
     /**
      * Запись счетчика скачанных программ
@@ -66,10 +70,24 @@ class tools{
             }
             exit;
         }
-        }
+    }
+
+    /**
+     * Отправка почты $e_name,$e_address,$e_text
+     */
+    function email_send($e_name,$e_address,$e_text){
+        $to  = "<va0z@ya.ru>" ; 
+        $subject = "Запрос с сайта"; 
+        $message = ' <p>'.$e_text.'</p>';
+        $headers  = "Content-type: text/html; charset=windows-1251 \r\n"; 
+   //     $headers .= "From: От кого письмо ".$this->e_address."\r\n"; 
+    //echo $e_address."<br>";
+    //$str="-> ".$to." | ".$subject." | ".$message." | ".$headers; 
+    //var_dump($str);
+    
+        mail($to, $subject, $message, $headers); 
+    }
 }
-
-
 
 
 ?>

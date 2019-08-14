@@ -20,6 +20,9 @@ switch ($act) {
     case 'about':
         about();
         break;
+    case 'email':
+        email();
+        break;
     case 'homepage':
         homepage();
         break;
@@ -57,7 +60,8 @@ function faq() {
     require ("inc/header.php");
     require ("inc/faq.php");
     require ("inc/footer.php");
-}function about() {
+}
+function about() {
     $data['TitleName'] = "ПО ЭТП :: О нас";
     $data['nav-about']="nav-menu-act";
     require ("inc/head.php");
@@ -65,6 +69,18 @@ function faq() {
     require ("inc/about.php");
     require ("inc/footer.php");
 }
+function email() {
+//    $tools=new tools();
+//    $tools->e_name=isset($_POST['e_name']) ? $_POST['e_name'] : "" ;
+    $e_name=isset($_POST['e_name']) ? $_POST['e_name'] : "" ;
+    $e_address=isset($_POST['e_address']) ? $_POST['e_address'] : "" ;
+    $e_text=isset($_POST['e_text']) ? $_POST['e_text'] : "" ;
+
+//    echo $e_address."<br>";
+    tools::email_send($e_name,$e_address,$e_text);
+    about();
+}
+
 
 function homepage() {
     $data['TitleName'] = "ПО ЭТП :: Главная страница";
