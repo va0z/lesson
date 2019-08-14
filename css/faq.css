@@ -1,0 +1,10 @@
+.nb {
+    font-size: 1.5rem;
+    color: #e08410
+}
+.col-main:before {
+    content: "?";
+    font-size: 3em; /* Размер буквы */
+    color: red; /* Цвет буквы */
+    margin: 0 4px 2px 0; /* Отступы вокруг буквы */
+}

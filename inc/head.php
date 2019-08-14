@@ -7,6 +7,7 @@
     <title><?php echo $data['TitleName']; ?></title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/soft.css">
+    <link rel="stylesheet" type="text/css" href="css/faq.css">
     <script type='text/javascript'>
         function click(link) {
 //            document.querySelector(link).style.display = document.querySelector(link).style.display=='none'? 'block' : 'none';

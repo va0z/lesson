@@ -14,11 +14,15 @@ body{
     margin: 0 auto;
     max-width: 845px;
 }
-.logo{
-    background-color: #e0181865;
+.logo-txt{
     position: absolute;
-    width: 12rem;
-    height: 10rem;
+    margin: 5px 0 0 220px;
+    font-size: .7rem;
+}
+.logo img{
+    position: absolute;
+    width: 200px;
+    height: 100px;
 }
 .menu-gamb{
     display: none;
@@ -120,7 +124,7 @@ body{
 }
 .aticle-wrp {
     width: 90%;
-    margin: 0 auto  ;
+    margin: 10px auto  ;
     max-width: 845px;
     display: table;
 }
@@ -202,6 +206,10 @@ footer p {
     .logo{
         display: none;
     }
+    .logo-txt{
+        position: absolute;
+        margin: 5px 0 0 50px;
+        font-size: .7rem;
     .menu-gamb{
         position: absolute;
         width: 50px;
