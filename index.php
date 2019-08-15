@@ -2,6 +2,7 @@
 require ("req/prog.php");
 
 $data = array();
+
 $act=isset($_POST['act']) ? $_POST['act'] : "" ;
 
 switch ($act) {

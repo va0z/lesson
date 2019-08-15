@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/soft.css">
     <link rel="stylesheet" type="text/css" href="css/faq.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
     <script type='text/javascript'>
         function click(link) {
 //            document.querySelector(link).style.display = document.querySelector(link).style.display=='none'? 'block' : 'none';

@@ -22,23 +22,23 @@
     <div class="nav">
         <form action="index.php" method="post">
             <input type="hidden" name="act" value="homepage">
-            <input class="<?php echo $data['nav-homepage']; ?>" type="submit" name="button" value="Главная">
+            <input class="<?php echo isset($data['nav-homepage']) ?$data['nav-homepage'] : ""; ?>" type="submit" name="button" value="Главная">
         </form>
         <form action="index.php" method="post">
             <input type="hidden" name="act" value="poetp">
-            <input class="<?php echo $data['nav-poetp']; ?>" type="submit" name="button" value="ПО ЕТП">
+            <input class="<?php echo isset($data['nav-poetp']) ? $data['nav-poetp'] : ""; ?>" type="submit" name="button" value="ПО ЕТП">
         </form>
         <form action="index.php" method="post">
             <input type="hidden" name="act" value="aes">
-            <input class="<?php echo $data['nav-aes']; ?>" type="submit" name="button" value="Auto ES">
+            <input class="<?php echo isset($data['nav-aes']) ? $data['nav-aes'] : ""; ?>" type="submit" name="button" value="Auto ES">
         </form>
         <form action="index.php" method="post">
             <input type="hidden" name="act" value="faq">
-            <input class="<?php echo $data['nav-faq']; ?>" type="submit" name="button" value="Вопросы">
+            <input class="<?php echo isset($data['nav-faq']) ? $data['nav-faq'] : ""; ?>" type="submit" name="button" value="Вопросы">
         </form>
         <form action="index.php" method="post">
             <input type="hidden" name="act" value="about">
-            <input class="<?php echo $data['nav-about']; ?>" type="submit" name="button" value="О нас">
+            <input class="<?php echo isset($data['nav-about']) ? $data['nav-about'] : ""; ?>" type="submit" name="button" value="О нас">
         </form>
 
     </div>

@@ -8,9 +8,13 @@
         <hr>
         <form action="/" method="post">
             <input type="hidden" name="act" value="email">
-            <input name="e_name" placeholder="Введите ваше имя" type="text" value="">
-            <input name="e_address" type="email" placeholder="mail@example.com" value="">
-            <input name="e_text" type="textarea" placeholder="напишите тут чего-нибудь."></textarea>
+            <input class="email e_input" name="e_name" placeholder="Введите ваше имя" type="text" value="">
+            <input class="email e_input" name="e_address" type="email" placeholder="mail@example.com" value="">
+            <input class="email e_text" name="e_text" type="textarea" placeholder="напишите тут чего-нибудь."></textarea>
+            <?php 
+            $code_cap=tools::generate_code();
+            tools::img_code($code_cap);
+            ?>
             <input type="submit" value="Отправить">
         </form>
 

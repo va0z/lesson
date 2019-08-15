@@ -22,3 +22,6 @@ git push origin master
 git remote show origin # инспекция удаленного репозитория
 
 //            document.querySelector(link).style.display = document.querySelector(link).style.display=='none'? 'block' : 'none';
+
+Произошло исключение.
+Deprecated: Non-static method tools::img_code() should not be called statically

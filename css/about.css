@@ -1,0 +1,20 @@
+.email{
+    width: 100%;
+    height: 2rem;
+    font-size: 1.1rem;
+    border: 1px solid #e08410;
+    background-color: #d6d6d6;
+    margin: 1rem auto;
+}
+
+.e_input{
+    width: 100%;
+    height: 2rem;
+    font-size: 1.1rem;
+}
+.e_text{
+    width: 100%;
+    height: 5rem;
+    font-size: .5rem;
+    vertical-align: text-top;
+}
