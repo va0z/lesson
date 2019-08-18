@@ -13,8 +13,9 @@
             <input class="email e_text" name="e_text" type="textarea" placeholder="напишите тут чего-нибудь."></textarea>
             <?php 
             $code_cap=tools::generate_code();
-            tools::img_code($code_cap);
+//            tools::img_code($code_cap);
             ?>
+            <img src="/captha/captha.php" alt="">
             <input type="submit" value="Отправить">
         </form>
 

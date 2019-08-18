@@ -108,7 +108,28 @@ class tools{
 
     /** Пишем функцию генерации изображения
      * исходник:https://habr.com/ru/post/120615/ */ 
-    public function img_code($code) // $code - код нашей капчи, который мы укажем при вызове функции
+     function imageTest()
+     {
+        header('Content-Type: image/png');
+        // Создание изображения
+        $im = imagecreatetruecolor(400, 30);
+        // Создание цветов
+        $white = imagecolorallocate($im, 255, 255, 255);
+        $grey = imagecolorallocate($im, 128, 128, 128);
+        $black = imagecolorallocate($im, 0, 0, 0);
+        imagefilledrectangle($im, 0, 0, 399, 29, $white);
+        // Текст надписи
+        $text = 'Тест...';
+        // Замена пути к шрифту на пользовательский
+        $font = 'arial.ttf';
+        // Тень
+        imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
+        // Текст
+        imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
+        imagepng($im);
+        imagedestroy($im);
+    }
+     public function img_code($code) // $code - код нашей капчи, который мы укажем при вызове функции
     {
         define("img_dir", "/img/"); // папка с подложкой
         // Отправляем браузеру Header'ы
@@ -126,12 +147,24 @@ class tools{
         );
         // Шрифты для капчи. Задавать можно сколько угодно, они будут выбираться случайно
         $font_arr = array();
-        $font_arr[0]["fname"] = "Papyrus.ttf";	// Имя шрифта. Я выбрал Droid Sans, он тонкий, плохо выделяется среди линий.
+        $font_arr[0]["fname"] = "papyrus.ttf";	// Имя шрифта. Я выбрал Droid Sans, он тонкий, плохо выделяется среди линий.
         $font_arr[0]["size"] = rand(20, 30);				// Размер в pt
+        
+        $dir=opendir('./img/');//directory with fonts
+        if($dir)
+        while($f=readdir($dir)){
+            if(preg_match('/.ttf$/',$f)){
+            $font=explode('.',$f);
+            define($font[0],realpath('./font/'.$f));
+            }
+        }
+        if($dir)
+        closedir($dir);
+
         // Генерируем "подстилку" для капчи со случайным фоном
         $n = rand(0,sizeof($font_arr)-1);
         $img_fn = $img_arr[rand(0, sizeof($img_arr)-1)];
-        echo "<img src='/img/". $img_fn."'>";
+    echo "<img src='/img/". $img_fn."'>";
         $im = @imagecreatefrompng (img_dir . $img_fn); 
         if(!$im) // Если изображение не создалось
         {
@@ -139,9 +172,7 @@ class tools{
             $im  = imagecreatetruecolor(150, 30);
             $bgc = imagecolorallocate($im, 255, 255, 255);
             $tc  = imagecolorallocate($im, 0, 0, 0);
-
             imagefilledrectangle($im, 0, 0, 150, 30, $bgc);
-
             /* Выводим сообщение об ошибке */
             imagestring($im, 1, 5, 5, 'Ошибка загрузки ' . $imgname, $tc);
         }
@@ -159,7 +190,10 @@ class tools{
         for($i = 0; $i < strlen($code); $i++) {
             $x+=15;
             $letter=substr($code, $i, 1);
-            imagettftext ($im, $font_arr[$n]["size"], rand(2, 4), $x, rand(50, 55), $color, img_dir.$font_arr[$n]["fname"], $letter);
+            //putenv( 'GDFONTPATH='.realpath('.') );
+//            putenv('GDFONTPATH=D:\distr\OSPanel\domains\lesson\img');
+//            imagettftext ($im, $font_arr[$n]["size"], rand(2, 4), $x, rand(50, 55), $color, $font_arr[$n]["fname"], $letter);
+//            imagettftext ()
         }
 
         // Опять линии, уже сверху текста
@@ -169,6 +203,7 @@ class tools{
             imageline($im, rand(0, 20), rand(1, 50), rand(150, 180), rand(1, 50), $color);
         }
         // Возвращаем получившееся изображение
+        header("Content-Type:image/png");
         ImagePNG ($im);
         ImageDestroy ($im);
     }
