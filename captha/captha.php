@@ -4,23 +4,14 @@ define("img_dir", __DIR__."/"); // папка с подложкой
 $linenum = rand(3, 7); 
 // Задаем фоны для капчи. Можете нарисовать свой и загрузить его в папку /img. Рекомендуемый размер - 150х70. Фонов может быть сколько угодно
 $img_arr = array(
-                "1.png"
+                "1.png","2.png","3.png","4.png"
 );
 // Шрифты для капчи. Задавать можно сколько угодно, они будут выбираться случайно
 $font_arr = array();
-$font_arr[0]["fname"] = "papyrus.ttf";	// Имя шрифта. Я выбрал Droid Sans, он тонкий, плохо выделяется среди линий.
+$font_arr[0]["fname"] = "impact.ttf";	// Имя шрифта. Я выбрал Droid Sans, он тонкий, плохо выделяется среди линий.
 $font_arr[0]["size"] = rand(20, 30);				// Размер в pt
-
-$dir=opendir(img_dir);//directory with fonts
-if($dir)
-while($f=readdir($dir)){
-    if(preg_match('/.ttf$/',$f)){
-    $font=explode('.',$f);
-    define($font[0],realpath('./font/'.$f));
-    }
-}
-if($dir)
-closedir($dir);
+// $font_arr[0]["fname"] = "dutcheb.ttf";	// Имя шрифта. Я выбрал Droid Sans, он тонкий, плохо выделяется среди линий.
+// $font_arr[0]["size"] = rand(20, 30);
 
 // Генерируем "подстилку" для капчи со случайным фоном
 $n = rand(0,sizeof($font_arr)-1);
@@ -41,10 +32,7 @@ $x = rand(0, 35);
 for($i = 0; $i < strlen($code); $i++) {
     $x+=15;
     $letter=substr($code, $i, 1);
-    //putenv( 'GDFONTPATH='.realpath('.') );
-//            putenv('GDFONTPATH=D:\distr\OSPanel\domains\lesson\img');
-           imagettftext ($im, $font_arr[$n]["size"], rand(2, 4), $x, rand(50, 55), $color, img_dir . $font_arr[$n]["fname"], $letter);
-//            imagettftext ()
+    imagettftext ($im, $font_arr[$n]["size"], rand(2, 4), $x, rand(50, 55), $color, img_dir . $font_arr[$n]["fname"], $letter);
 }
 
 // Опять линии, уже сверху текста
