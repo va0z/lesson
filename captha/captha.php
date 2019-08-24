@@ -26,8 +26,10 @@ for ($i=0; $i<$linenum; $i++)
 }
 $color = imagecolorallocate($im, rand(0, 200), 0, rand(0, 200)); // Опять случайный цвет. Уже для текста.
 
-// Накладываем текст капчи	
-$code="ds34";			
+// Накладываем текст капчи
+// echo $_SESSION['code_cap'];	
+$code =   isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";
+// $code_cap=isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";			
 $x = rand(0, 35);
 for($i = 0; $i < strlen($code); $i++) {
     $x+=15;

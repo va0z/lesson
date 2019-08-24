@@ -12,11 +12,18 @@
             <input class="email e_input" name="e_address" type="email" placeholder="mail@example.com" value="">
             <input class="email e_text" name="e_text" type="textarea" placeholder="напишите тут чего-нибудь."></textarea>
             <?php 
-            $code_cap=tools::generate_code();
-//            tools::img_code($code_cap);
+            // session_start();
+            // echo session_id();
+            // echo session_name();
+            $tool=new Tools;
+            $_SESSION['code_cap']=$tool->generate_code();
+            // echo $_SESSION['code_cap'];
+            //            tools::img_code($code_cap);
             ?>
-            <img src="/captha/captha.php" alt="">
-            <input type="submit" value="Отправить">
+
+            <img class="email e_img" src="/captha/captha.php" alt="">
+            <input class="email e_cap" name="e_cap" type="text" placeholder="введите код с картинки.">
+            <input class="email e_sub" type="submit" value="Отправить">
         </form>
 
     </div>

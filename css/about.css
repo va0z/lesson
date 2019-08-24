@@ -18,3 +18,22 @@
     font-size: .5rem;
     vertical-align: text-top;
 }
+.e_cap{
+    width: 89%;
+    height: 3rem;
+    float: left;
+    display: block;
+    margin: 20px 0 20px 1%;
+}
+.e_img{
+    width: 9%;
+    height: 3rem;
+    float: left;
+    display: block;
+}
+.e_sub{
+    width: 100%;
+    height: 70px;
+    float: left;
+    display: block;
+}

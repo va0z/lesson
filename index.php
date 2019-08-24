@@ -1,4 +1,7 @@
-<?php
+<?php 
+session_start();
+// echo session_id();
+
 require ("req/prog.php");
 
 $data = array();
@@ -76,9 +79,12 @@ function email() {
     $e_name=isset($_POST['e_name']) ? $_POST['e_name'] : "" ;
     $e_address=isset($_POST['e_address']) ? $_POST['e_address'] : "" ;
     $e_text=isset($_POST['e_text']) ? $_POST['e_text'] : "" ;
-
+    $e_cap=isset($_POST['e_cap']) ? $_POST['e_cap'] : "" ;
 //    echo $e_address."<br>";
-    tools::email_send($e_name,$e_address,$e_text);
+    $code_cap=isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";
+    if($code_cap==$e_cap){echo "true";}
+    else{echo"falshe";}
+    // tools::email_send($e_name,$e_address,$e_text);
     about();
 }
 
