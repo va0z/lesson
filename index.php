@@ -1,7 +1,8 @@
 <?php 
 session_start();
 // echo session_id();
-
+$cap_rezult;
+$test1="21";
 require ("req/prog.php");
 
 $data = array();
@@ -66,6 +67,7 @@ function faq() {
     require ("inc/footer.php");
 }
 function about() {
+    global $cap_rezult;
     $data['TitleName'] = "ПО ЭТП :: О нас";
     $data['nav-about']="nav-menu-act";
     require ("inc/head.php");
@@ -74,7 +76,7 @@ function about() {
     require ("inc/footer.php");
 }
 function email() {
-//    $tools=new tools();
+    global $cap_rezult;
 //    $tools->e_name=isset($_POST['e_name']) ? $_POST['e_name'] : "" ;
     $e_name=isset($_POST['e_name']) ? $_POST['e_name'] : "" ;
     $e_address=isset($_POST['e_address']) ? $_POST['e_address'] : "" ;
@@ -82,9 +84,13 @@ function email() {
     $e_cap=isset($_POST['e_cap']) ? $_POST['e_cap'] : "" ;
 //    echo $e_address."<br>";
     $code_cap=isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";
-    if($code_cap==$e_cap){echo "true";}
-    else{echo"falshe";}
-    // tools::email_send($e_name,$e_address,$e_text);
+    $tools=new tools();
+    if($code_cap==$e_cap) {
+         $cap_rezult="true";
+         $tools->email_send($e_name,$e_address,$e_text);
+    }
+    else{$cap_rezult="false";}
+    
     about();
 }
 

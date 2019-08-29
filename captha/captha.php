@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 define("img_dir", __DIR__."/"); // папка с подложкой
 // Количество линий. Обратите внимание, что они накладываться будут дважды (за текстом и на текст). Поставим рандомное значение, от 3 до 7.
 $linenum = rand(3, 7); 
@@ -32,9 +34,9 @@ $code =   isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";
 // $code_cap=isset($_SESSION['code_cap']) ? $_SESSION['code_cap'] : "";			
 $x = rand(0, 35);
 for($i = 0; $i < strlen($code); $i++) {
-    $x+=15;
     $letter=substr($code, $i, 1);
     imagettftext ($im, $font_arr[$n]["size"], rand(2, 4), $x, rand(50, 55), $color, img_dir . $font_arr[$n]["fname"], $letter);
+    $x+=17;
 }
 
 // Опять линии, уже сверху текста
