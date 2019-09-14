@@ -49,13 +49,6 @@
 	animation: sli 10s infinite;
 }
 
-@keyframes sli	 {
-	0%,100%   {background-image: url(http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg);} 
-	20%  { background-image: url(http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg);} 
-	40%  { background-image: url(http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg);} 
-	60%  { background-image: url(http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg);} 
-	80%  { background-image: url(http://habrastorage.org/files/53c/ff6/c1c/53cff6c1caf842368c70b8ef892d8402.jpg);} 
-}
 
 #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
@@ -114,7 +107,6 @@
 	-o-transition: background ease-in-out .5s;
 	transition: background ease-in-out .5s;
 	animation: bool 10s infinite;
-	animation-timing-function: ease-in-out;
 	background: red;
 }
 
@@ -127,13 +119,6 @@
 #slide5:checked ~ .controls label:nth-of-type(5) {
 	background: #ddd;
 
-}
-@keyframes bool	 {
-	0%,100%   {left: -200px;} 
-	20%  {left: -160px; } 
-	40%  {left: -120px;} 
-	60%  {left: -80px;} 
-	80% {left: -40px; } 
 }
 
 .reviews label:after {
@@ -151,3 +136,18 @@
 	border-radius: 50%;
 }
 
+@keyframes bool	 {
+	0%,100%   {left: -200px;} 
+	20%  {left: -160px; } 
+	40%  {left: -120px;} 
+	60%  {left: -80px;} 
+	80% {left: -40px; } 
+}
+
+@keyframes sli	 {
+	0%,100%   {background-image: url(http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg);} 
+	20%  { background-image: url(http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg);} 
+	40%  { background-image: url(http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg);} 
+	60%  { background-image: url(http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg);} 
+	80%  { background-image: url(http://habrastorage.org/files/53c/ff6/c1c/53cff6c1caf842368c70b8ef892d8402.jpg);} 
+}
